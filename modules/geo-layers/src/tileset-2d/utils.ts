@@ -294,10 +294,7 @@ export function getTileIndices({
     ? Math.round(viewport.zoom + Math.log2(TILE_SIZE / tileSize) + zoomOffset)
     : Math.ceil(viewport.zoom + zoomOffset);
 
-  // This check doesn't round/ceil and doesn't use the offset. This ensures that tiles are not rendered if the
-  // viewport.zoom is less than minZoom. eg. at viewport.zoom = 9.5 with minZoom = 10 we should not fetch tiles
-  // at z = 10 until viewport.zoom is 10 or greater.
-  if (typeof minZoom === 'number' && Number.isFinite(minZoom) && viewport.zoom < minZoom) {
+  if (typeof minZoom === 'number' && Number.isFinite(minZoom) && z < minZoom) {
     if (!extent) {
       return [];
     }

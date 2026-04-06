@@ -102,14 +102,6 @@ const TEST_CASES = [
     output: []
   },
   {
-    title: 'ignore round and offset on minZoom check',
-    viewport: new WebMercatorViewport({longitude: -90, latitude: 45, zoom: 3.5}),
-    zoomOffset: 1,
-    minZoom: 4,
-    maxZoom: undefined,
-    output: []
-  },
-  {
     title: 'over zoom',
     viewport: new WebMercatorViewport({
       width: 800,
